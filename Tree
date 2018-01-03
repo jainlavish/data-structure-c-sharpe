@@ -1,0 +1,107 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Test
+{
+    public class TNode
+    {
+        public TNode Left;
+        public TNode Right;
+        public int data;
+    }
+
+    public class Tree
+    {
+        public TNode Root;
+
+        public void PreOrder(TNode node)
+        {
+            if (node == null)
+                return;
+
+            /* first print data of node */
+            Console.Write(node.data + " ");
+
+            /* then recur on left sutree */
+            PreOrder(node.Left);
+
+            /* now recur on right subtree */
+            PreOrder(node.Right);
+        }
+
+        public void InOrder(TNode node)
+        {
+            if (node == null)
+                return;
+
+            /* first recur on left child */
+            InOrder(node.Left);
+
+            /* then print the data of node */
+            Console.Write(node.data + " ");
+
+            /* now recur on right child */
+            InOrder(node.Right);
+        }
+
+        public void PostOrder(TNode node)
+        {
+            if (node == null)
+                return;
+
+            // first recur on left subtree
+            PostOrder(node.Left);
+
+            // then recur on right subtree
+            PostOrder(node.Right);
+
+            // now deal with the node
+            Console.Write(node.data + " ");
+        }
+
+        public void AddNode(int item)
+        {
+            if (Root == null)
+            {
+                this.Root = new TNode();
+                this.Root.data = item;
+            }
+            else
+            {
+                var a = Root.data;
+                TNode curr = Root;
+                while (a != 0)
+                {
+                    if (curr.data > item)
+                    {
+                        if (curr.Left == null)
+                        {
+                            curr.Left = new TNode();
+                            curr.Left.data = item;
+                            a = 0;
+                        }
+                        else
+                        {
+                            curr = curr.Left;
+                        }
+                    }
+
+                    if (curr.data < item)
+                    {
+                        if (curr.Right == null)
+                        {
+                            curr.Right = new TNode();
+                            curr.Right.data = item;
+                            a = 0;
+                        }
+                        else
+                        {
+                            curr = curr.Right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
