@@ -1,0 +1,228 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+
+namespace Test
+{
+    using System;
+
+    class Test
+    {
+        
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+                ////string reverse
+                //string str1 = "This is a test string";
+                //char[] st2 = new char[str1.Length];
+                //int j = str1.Length-1;
+                //for (int i = 0; i < str1.Length -1; i++)
+                //{
+                //    st2[i] = str1[j];
+                //    j--;
+                //}
+                //Console.WriteLine(new string(st2));
+
+                ////reverse number
+                //int num = 1234;
+                //int a, c = 0;
+                //while (num > 0)
+                //{
+                //    a = num % 10;
+                //    c = c * 10 + a;
+                //    num = num / 10;
+                //}
+                //Console.WriteLine(c.ToString());
+
+
+                //var num = new[] {"Jaipur", "Bangalore", "Hyderabad", "Pune", "Mumbai"};
+                //int len = 0;
+                //string word=string.Empty;
+                //foreach (var a in num)
+                //{
+                //    if (len >= a.Length) continue;
+                //    len = a.Length;
+                //    word = a;
+                //}
+                //Console.WriteLine(word);
+
+                //var num = new[] {2, 2, 1, 3, 2, 5 , 2, 2};
+                //var dict = new Dictionary<int,int>();
+                //foreach (var n in num)
+                //{
+                //    if (dict.ContainsKey(n))
+                //    {
+                //        dict[n] += 1;
+                //        if (dict[n] > num.Length / 2)
+                //        {
+                //            Console.WriteLine(n);
+                //            break;
+                //        }
+                //    }
+                //    else
+                //    {
+                //        dict.Add(n,1);
+                //    }
+                //}
+
+                //var str1 = "lavish";
+                //var str2 = "aaishl";
+                //var arr = str1.ToCharArray();
+                //var isAnagram = true;
+                //if (str1.Length.Equals(str2.Length))
+                //{
+                //    foreach (var ch in arr)
+                //    {
+                //        if (!str2.Contains(ch))
+                //            isAnagram = false;
+                //    }
+                //}
+
+                //if(isAnagram)
+                //    Console.WriteLine("Anagrams");
+                //else
+                //{
+                //    Console.WriteLine("Not anagrams");
+                //}
+                //string cont = "n";
+                //var stack = new Stack<int>();
+
+                //do
+                //{
+                //    Console.WriteLine("Choose an option:");
+                //    Console.WriteLine("To push into stack: 1");
+                //    Console.WriteLine("To pop from stack: 2");
+                //    Console.WriteLine("To print stack: 3");
+                //    int option = Convert.ToInt32(Console.ReadLine());
+                //    switch (option)
+                //    {
+                //        case 1:
+                //            var input = Console.ReadLine();
+                //            stack.Push(Convert.ToInt32(input));
+                //            Console.WriteLine("Do you want to continue (y/n):");
+                //            cont = Console.ReadLine();
+                //            break;
+                //        case 2:
+                //            stack.Pop();
+                //            Console.WriteLine("Do you want to continue (y/n):");
+                //            cont = Console.ReadLine();
+                //            break;
+                //        case 3:
+                //            for (int i = 0; i <= stack.Top; i++)
+                //            {                        
+                //                   Console.WriteLine(stack.Array[i]);
+                //            }
+                //            Console.WriteLine("Do you want to continue (y/n):");
+                //            cont = Console.ReadLine();
+                //            break;
+                //        default:
+                //            Console.WriteLine("Chosse a correct option");
+                //            Console.WriteLine("Do you want to continue (y/n):");
+                //            cont = Console.ReadLine();
+                //            break;
+                //    }
+                //} while (cont.Equals("y"));
+
+                //LinkList list = new LinkList();
+
+                //for (int i = 0; i < 10; i++)
+                //{
+                //    var node = new Node();
+                //    node.data = i + 1;
+                //    if (list.head == null)
+                //    {
+                //        list.head = node;
+                //        list.current = list.head;
+                //    }
+                //    else
+                //    {
+                //        list.current.next = node;
+                //        list.current = node;
+                //    }
+
+                //}
+
+
+                //list.current.next = list.head.next.next.next;
+
+
+                //var first = list.head;
+                //var second = list.head.next;
+
+                //do
+                //{
+                //    if (first == second)
+                //    {
+                //        Console.WriteLine("dsadad");
+                //        break;
+                //    }
+                //    first = first.next;
+                //    second = second.next.next;
+                //} while (first!=null && second!=null);
+
+                //list.head = new Node();
+                //list.head.data = 1;
+                //list.current = list.head;
+
+                //var n = new Node();
+                //n.data = 2;
+                //list.current.next = n;
+                //list.current = list.head.next;
+
+                //var n1 = new Node();
+                //n1.data = 3;
+                //list.current.next = n1;
+                //list.current = list.current.next;
+
+                //var curr = list.head;
+                //while (curr != null)
+                //{
+                //    Console.WriteLine(curr.data);
+                //    curr = curr.next;
+                //}
+
+                //Queue queue = new Queue(5);
+                //queue.Enqueue(1);
+                //queue.Enqueue(2);
+                //queue.Enqueue(3);
+                //queue.Enqueue(4);
+                //queue.Enqueue(5);
+
+                //queue.Display();
+
+                //queue.Dequeue();
+                //queue.Display();
+
+                //queue.Dequeue();
+                //queue.Display();
+
+                //queue.Enqueue(10);
+
+                //Tree tree = new Tree();
+                //tree.AddNode(4);
+                //tree.AddNode(5);
+                //tree.AddNode(2);
+                //tree.AddNode(3);
+                //tree.AddNode(1);
+
+                //Console.Write("In Order Traversal: ");
+                //tree.InOrder(tree.Root);
+                //Console.WriteLine();
+
+                //Console.Write("Pre Order Traversal: ");
+                //tree.PreOrder(tree.Root);
+                //Console.WriteLine();
+
+                //Console.Write("Post Order Traversal: ");
+                //tree.PostOrder(tree.Root);
+
+                Console.ReadKey();
+        }
+    }
+}
