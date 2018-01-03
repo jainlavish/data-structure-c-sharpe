@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Test
+{
+    public class Queue
+    {
+        public int Front, Rear;
+        public int Capacity;
+        public int [] Array;
+
+        public Queue(int capacity)
+        {
+            Front = 0;
+            Rear = 0;
+            Capacity = capacity;
+            Array = new int[this.Capacity];
+        }
+
+        public void Enqueue(int item)
+        {
+            if (Rear == Capacity)
+            {
+                Console.WriteLine("Queue is Full");
+            }
+            else
+            {
+                Array[Rear] = item;
+                Rear++;
+            }
+        }
+
+        public void Dequeue()
+        {
+            if (Rear == Front || Front>Rear)
+            {
+                Console.WriteLine("Queue is empty");
+            }
+                
+            else
+            {
+                var item = this.Array[this.Front];
+                this.Front = this.Front + 1;
+                Console.WriteLine("Item {0} is deleted.", item);
+            }
+        }
+
+        public void Display()
+        {
+            for (int i = Front; i < Rear; i++)
+                Console.WriteLine(Array[i]);
+        }
+    }
+}
