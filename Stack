@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+
+namespace Test
+{
+    public class Stack<T>
+    {
+        public int Top = -1;
+        public T [] Array = new T[5];
+
+        public void Push(T item)
+        {
+            if (this.Top < 4)
+            {
+                this.Top++;
+                Array[Top] = item;
+            }
+            else
+            {
+                Console.WriteLine("Stack is full");
+            }
+            
+        }
+
+        public void Pop()
+        {
+            if (this.Top >= 0)
+            {
+                Array[Top] = default(T);
+                this.Top--;
+            }
+            else
+            {
+                Console.WriteLine("Stack is empty");
+            }
+            
+        }
+
+    }
+}
